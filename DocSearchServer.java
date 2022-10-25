@@ -35,6 +35,7 @@ class Handler implements URLHandler {
       this.files = FileHelpers.getFiles(Paths.get(directory));
     }
     public String handleRequest(URI url) throws IOException {
+       System.out.println(Paths.get("./technical").getClass().getSimpleName());
        List<File> paths = FileHelpers.getFiles(Paths.get("./technical"));
        if (url.getPath().equals("/")) {
            return String.format("There are %d total files to search.", paths.size());
